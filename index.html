@@ -83,25 +83,71 @@
             color: white;
             border-color: #2e7d32;
         }
+
+        /* Perbaikan responsif untuk mobile */
+        @media (max-width: 768px) {
+            /* Nonaktifkan fixed background di iOS/Android agar tidak buggy */
+            .hero-parallax {
+                background-attachment: scroll;
+            }
+            /* Pastikan gambar di card tidak meluber */
+            .news-card img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        /* Cegah overflow horizontal di semua perangkat */
+        html, body {
+            overflow-x: hidden;
+        }
+
+        /* Agar judul card tidak pecah di layar kecil */
+        .news-card h3 {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+
+        /* Filter button lebih ramah sentuhan di mobile */
+        @media (max-width: 640px) {
+            .filter-btn {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-forest-50 font-sans text-gray-800 antialiased">
 
 <!-- ========== NAVBAR HIJAU TUA ========== -->
-<header class="bg-forest-900 text-white sticky top-0 z-40 shadow-lg">
+<header class="bg-forest-900 text-white sticky top-0 z-40 shadow-lg relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2.5 group">
             <!-- Logo gambar bantengan.jpeg -->
             <img src="image/logo.png" alt="Logo Bantengan" class="w-9 h-9 rounded-lg object-cover shadow-md">
             <span class="font-extrabold text-xl text-white">KKN<span class="text-yellow-400">BBK-8</span></span>
         </a>
+        <!-- Navigasi Desktop -->
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href="#" class="hover:text-yellow-300 transition">Beranda</a>
             <a href="#berita" class="hover:text-yellow-300 transition">Berita</a>
             <a href="#tentang" class="hover:text-yellow-300 transition">Proker</a>
             <a href="#kontak" class="hover:text-yellow-300 transition">Kontak</a>
         </nav>
-        <button class="md:hidden p-2 hover:bg-forest-700 rounded-lg"><i class="fa-solid fa-bars text-xl"></i></button>
+        <!-- Tombol Hamburger (Mobile) -->
+        <button id="menuToggle" class="md:hidden p-2 hover:bg-forest-700 rounded-lg" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Menu Dropdown Mobile -->
+    <div id="mobileMenu" class="hidden absolute top-16 left-0 w-full bg-forest-800 md:hidden shadow-lg z-50">
+        <nav class="flex flex-col px-4 py-3 space-y-2 text-sm font-medium">
+            <a href="#" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Beranda</a>
+            <a href="#berita" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Berita</a>
+            <a href="#tentang" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Proker</a>
+            <a href="#kontak" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Kontak</a>
+        </nav>
     </div>
 </header>
 
@@ -453,5 +499,36 @@
         filterAndSearch();
     })();
 </script>
+
+<!-- ========== SCRIPT UNTUK MOBILE MENU DROPDOWN ========== -->
+<script>
+    (function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation(); // Cegah event klik menyebar ke document
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Tutup menu saat mengklik di luar area menu
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            
+            // Tutup menu saat link di dalam mobile menu diklik
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    })();
+</script>
+
 </body>
 </html>
