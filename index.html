@@ -86,29 +86,25 @@
 
         /* Perbaikan responsif untuk mobile */
         @media (max-width: 768px) {
-            /* Nonaktifkan fixed background di iOS/Android agar tidak buggy */
             .hero-parallax {
                 background-attachment: scroll;
             }
-            /* Pastikan gambar di card tidak meluber */
             .news-card img {
                 max-width: 100%;
                 height: auto;
             }
         }
 
-        /* Cegah overflow horizontal di semua perangkat */
+        /* Cegah overflow horizontal */
         html, body {
             overflow-x: hidden;
         }
 
-        /* Agar judul card tidak pecah di layar kecil */
         .news-card h3 {
             word-break: break-word;
             overflow-wrap: break-word;
         }
 
-        /* Filter button lebih ramah sentuhan di mobile */
         @media (max-width: 640px) {
             .filter-btn {
                 padding: 0.5rem 0.75rem;
@@ -123,7 +119,6 @@
 <header class="bg-forest-900 text-white sticky top-0 z-40 shadow-lg relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2.5 group">
-            <!-- Logo gambar bantengan.jpeg -->
             <img src="image/logo.png" alt="Logo Bantengan" class="w-9 h-9 rounded-lg object-cover shadow-md">
             <span class="font-extrabold text-xl text-white">KKN<span class="text-yellow-400">BBK-8</span></span>
         </a>
@@ -140,13 +135,21 @@
         </button>
     </div>
 
-    <!-- Menu Dropdown Mobile -->
-    <div id="mobileMenu" class="hidden absolute top-16 left-0 w-full bg-forest-800 md:hidden shadow-lg z-50">
-        <nav class="flex flex-col px-4 py-3 space-y-2 text-sm font-medium">
-            <a href="#" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Beranda</a>
-            <a href="#berita" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Berita</a>
-            <a href="#tentang" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Proker</a>
-            <a href="#kontak" class="block py-2 px-3 rounded hover:bg-forest-700 transition text-white">Kontak</a>
+    <!-- Menu Dropdown Mobile (CARD STYLE) -->
+    <div id="mobileMenu" class="hidden absolute top-full right-4 mt-2 w-56 bg-forest-800 rounded-xl shadow-2xl border border-forest-700 z-50 md:hidden overflow-hidden">
+        <nav class="flex flex-col py-2 text-sm font-medium">
+            <a href="#" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white">
+                <i class="fa-solid fa-house text-yellow-400 w-4"></i> Beranda
+            </a>
+            <a href="#berita" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white">
+                <i class="fa-solid fa-newspaper text-yellow-400 w-4"></i> Berita
+            </a>
+            <a href="#tentang" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white">
+                <i class="fa-solid fa-bullseye text-yellow-400 w-4"></i> Proker
+            </a>
+            <a href="#kontak" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white">
+                <i class="fa-solid fa-address-book text-yellow-400 w-4"></i> Kontak
+            </a>
         </nav>
     </div>
 </header>
@@ -164,7 +167,6 @@
             <a href="#berita" class="bg-white text-forest-800 font-bold px-6 py-3 rounded-full hover:bg-gray-100 transition shadow-xl">Jelajahi Berita</a>
             <a href="#cari" class="bg-yellow-400 text-forest-900 font-bold px-6 py-3 rounded-full hover:bg-yellow-300 transition shadow-xl">Cari Proker</a>
         </div>
-        <!-- Scroll indicator -->
         <div class="mt-10 animate-bounce">
             <i class="fa-solid fa-chevron-down text-white/70 text-xl"></i>
         </div>
@@ -173,27 +175,21 @@
 
 <!-- ========== LIVE SEARCH & BERITA ========== -->
 <section id="berita" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
-    <!-- Bagian Arsip Kegiatan yang didesain ulang agar lebih hidup dan tidak generik -->
     <div class="mb-10">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
             <div>
-                <!-- Judul dengan sentuhan storytelling -->
                 <div class="flex items-center gap-2 mb-1">
                     <span class="text-3xl">📮</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-forest-800">Cerita Terbaru</h2>
                 </div>
-
             </div>
-            <!-- Statistik kecil hasil -->
             <div class="bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm text-xs text-forest-700 border border-forest-100">
                 <i class="fa-regular fa-newspaper mr-1"></i> 
                 <span id="visibleCountText">6</span> kegiatan ditemukan
             </div>
         </div>
 
-        <!-- Filter & Search yang lebih menarik -->
         <div class="mt-6 flex flex-wrap items-center gap-3 justify-between">
-            <!-- Badge Filter Cepat (biar gak AI banget) -->
             <div class="flex flex-wrap gap-2">
                 <span class="text-xs font-semibold text-forest-600 self-center mr-1"><i class="fa-regular fa-compass"></i> Filter:</span>
                 <button data-filter="all" class="filter-btn active px-3 py-1.5 text-xs rounded-full border border-forest-300 bg-white text-forest-700 hover:bg-forest-100 transition">Semua</button>
@@ -203,8 +199,6 @@
                 <button data-filter="pemberdayaan" class="filter-btn px-3 py-1.5 text-xs rounded-full border border-forest-300 bg-white text-forest-700 hover:bg-forest-100 transition">⚡ Pemberdayaan</button>
                 <button data-filter="sosial" class="filter-btn px-3 py-1.5 text-xs rounded-full border border-forest-300 bg-white text-forest-700 hover:bg-forest-100 transition">🤝 Sosial</button>
             </div>
-
-            <!-- Search Box dengan placeholder lebih humanis -->
             <div class="relative w-full sm:w-72 mt-2 sm:mt-0" id="cari">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
                 <input type="text" id="searchInput" placeholder="Cari judul atau kategori... misal: 'donor' atau 'digital'" 
@@ -306,7 +300,6 @@
         </article>
     </div>
 
-    <!-- Pesan jika tidak ada hasil pencarian + saran -->
     <div id="noResult" class="hidden text-center py-10 text-gray-500">
         <i class="fa-regular fa-face-frown text-4xl mb-2"></i>
         <p class="text-lg font-medium">Wah, nggak ketemu nih.</p>
@@ -340,7 +333,6 @@
                 <div class="text-sm text-gray-600">Warga Terlibat</div>
             </div>
         </div>
-        <!-- Progress bar contoh proker -->
         <div class="mt-12 max-w-2xl mx-auto space-y-6">
             <h3 class="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2"><i class="fa-solid fa-spinner text-forest-600"></i> Progres Proker Utama</h3>
             <div>
@@ -359,10 +351,9 @@
     </div>
 </section>
 
-<!-- ========== FOOTER (DENGAN SOSIAL MEDIA & EMAIL BARU) ========== -->
+<!-- ========== FOOTER ========== -->
 <footer id="kontak" class="bg-forest-900 text-white pt-12 pb-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-        <!-- Kolom 1: Brand -->
         <div>
             <div class="flex items-center gap-2 mb-3">
                 <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center"><i class="fa-solid fa-mountain-sun text-forest-900 text-sm"></i></div>
@@ -370,8 +361,6 @@
             </div>
             <p class="text-sm text-green-200">Portal dokumentasi pengabdian masyarakat. Menghubungkan cerita desa dengan dunia.</p>
         </div>
-        
-        <!-- Kolom 2: Navigasi -->
         <div>
             <h4 class="font-semibold text-white mb-3">Navigasi</h4>
             <ul class="space-y-2 text-sm text-green-100">
@@ -380,31 +369,22 @@
                 <li><a href="#tentang" class="hover:text-yellow-300 transition">Proker</a></li>
             </ul>
         </div>
-
-        <!-- Kolom 3: Sosial Media & Kontak (Sesuai permintaan: Instagram, TikTok, Email) -->
         <div>
             <h4 class="font-semibold text-white mb-3">Ikuti Kami</h4>
             <ul class="space-y-2 text-sm text-green-100">
                 <li class="flex items-center gap-2">
                     <i class="fab fa-instagram text-yellow-400 w-5"></i>
-                    <a href="https://instagram.com/bbk8unair_bantengan" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300 transition">
-                        @bbk8unair_bantengan
-                    </a>
+                    <a href="https://instagram.com/bbk8unair_bantengan" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300 transition">@bbk8unair_bantengan</a>
                 </li>
                 <li class="flex items-center gap-2">
                     <i class="fab fa-tiktok text-yellow-400 w-5"></i>
-                    <a href="https://tiktok.com/@bbk8unair_bantengan" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300 transition">
-                        @bbk8unair_bantengan
-                    </a>
+                    <a href="https://tiktok.com/@bbk8unair_bantengan" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-300 transition">@bbk8unair_bantengan</a>
                 </li>
                 <li class="flex items-center gap-2">
                     <i class="fa-regular fa-envelope text-yellow-400 w-5"></i>
-                    <a href="mailto:bbk8bantengan@gmail.com" class="hover:text-yellow-300 transition">
-                        bbk8bantengan@gmail.com
-                    </a>
+                    <a href="mailto:bbk8bantengan@gmail.com" class="hover:text-yellow-300 transition">bbk8bantengan@gmail.com</a>
                 </li>
             </ul>
-            <!-- Tambahan sedikit sentuhan: ucapan terima kasih -->
         </div>
     </div>
     <div class="text-center text-xs text-green-300 border-t border-forest-700 pt-6">
@@ -420,12 +400,9 @@
         const noResultDiv = document.getElementById('noResult');
         const visibleCountSpan = document.getElementById('visibleCountText');
         const resetBtn = document.getElementById('resetSearchBtn');
-        
-        // Filter buttons
         const filterBtns = document.querySelectorAll('.filter-btn');
-        let activeFilter = 'all';   // 'all' or category name
-        
-        // Fungsi utama untuk menyaring berdasarkan input teks dan filter kategori
+        let activeFilter = 'all';
+
         function filterAndSearch() {
             const query = searchInput.value.toLowerCase().trim();
             let visibleCount = 0;
@@ -433,11 +410,8 @@
             cards.forEach(card => {
                 const title = card.getAttribute('data-title').toLowerCase();
                 const category = card.getAttribute('data-category').toLowerCase();
-                
-                // Cek filter kategori
-                let categoryMatch = (activeFilter === 'all') || (category === activeFilter);
-                // Cek teks pencarian
-                let searchMatch = (query === '') || title.includes(query) || category.includes(query);
+                const categoryMatch = (activeFilter === 'all') || (category === activeFilter);
+                const searchMatch = (query === '') || title.includes(query) || category.includes(query);
                 
                 if (categoryMatch && searchMatch) {
                     card.classList.remove('hidden-by-search');
@@ -447,10 +421,7 @@
                 }
             });
             
-            // Update jumlah kegiatan tampak
             visibleCountSpan.innerText = visibleCount;
-            
-            // Tampilkan pesan no result jika perlu
             if (visibleCount === 0 && (query !== '' || activeFilter !== 'all')) {
                 noResultDiv.classList.remove('hidden');
             } else {
@@ -458,30 +429,21 @@
             }
         }
         
-        // Event listener untuk input pencarian
         searchInput.addEventListener('input', filterAndSearch);
         
-        // Event listener untuk tombol filter
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function() {
-                // Update class active
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-                
-                // Ambil nilai filter
                 const filterValue = this.getAttribute('data-filter');
                 activeFilter = filterValue === 'all' ? 'all' : filterValue;
-                
-                // Reset search input jika perlu? Biarkan user tetap mencari di dalam kategori, lebih natural.
                 filterAndSearch();
             });
         });
         
-        // Tombol reset pencarian (muncul saat noResult)
         if (resetBtn) {
             resetBtn.addEventListener('click', function() {
                 searchInput.value = '';
-                // Set filter ke 'Semua' dan aktifkan
                 activeFilter = 'all';
                 filterBtns.forEach(btn => {
                     if (btn.getAttribute('data-filter') === 'all') {
@@ -495,12 +457,11 @@
             });
         }
         
-        // Inisialisasi pertama
         filterAndSearch();
     })();
 </script>
 
-<!-- ========== SCRIPT UNTUK MOBILE MENU DROPDOWN ========== -->
+<!-- ========== MOBILE MENU DROPDOWN SCRIPT ========== -->
 <script>
     (function() {
         const menuToggle = document.getElementById('menuToggle');
@@ -508,18 +469,16 @@
         
         if (menuToggle && mobileMenu) {
             menuToggle.addEventListener('click', function(e) {
-                e.stopPropagation(); // Cegah event klik menyebar ke document
+                e.stopPropagation();
                 mobileMenu.classList.toggle('hidden');
             });
             
-            // Tutup menu saat mengklik di luar area menu
             document.addEventListener('click', function(event) {
                 if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
                     mobileMenu.classList.add('hidden');
                 }
             });
             
-            // Tutup menu saat link di dalam mobile menu diklik
             const mobileLinks = mobileMenu.querySelectorAll('a');
             mobileLinks.forEach(link => {
                 link.addEventListener('click', function() {
