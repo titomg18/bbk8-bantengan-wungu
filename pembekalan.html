@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail: Pembekalan Luring BBK 8 (Kelompok Madiun) | KKN Jelajah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Nunito', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        forest: {
+                            50: '#f2f7f2',
+                            100: '#e0efe0',
+                            200: '#c2e0c2',
+                            300: '#95c995',
+                            400: '#66ad66',
+                            500: '#459245',
+                            600: '#2e7d32',
+                            700: '#236626',
+                            800: '#1b4f1e',
+                            900: '#143618',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Nunito', system-ui, sans-serif; }
+        .border-left-sosial { border-left: 5px solid #f97316; }
+        .bg-forest-50 { background-color: #f2f7f2; }
+        .text-forest-800 { color: #1b4f1e; }
+    </style>
+</head>
+<body class="bg-forest-50">
+
+<!-- ========== NAVBAR ========== -->
+<header class="bg-forest-900 text-white sticky top-0 z-40 shadow-lg relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+            <img src="image/logo.png" alt="Logo Bantengan" class="w-9 h-9 rounded-lg object-cover shadow-md">
+            <span class="font-extrabold text-xl text-white">KKN<span class="text-yellow-400">BBK-8</span></span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="index.html" class="hover:text-yellow-300 transition">Beranda</a>
+            <a href="index.html#berita" class="hover:text-yellow-300 transition">Berita</a>
+            <a href="index.html#tentang" class="hover:text-yellow-300 transition">Proker</a>
+            <a href="index.html#kontak" class="hover:text-yellow-300 transition">Kontak</a>
+        </nav>
+        <button id="menuToggle" class="md:hidden p-2 hover:bg-forest-700 rounded-lg" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+    <div id="mobileMenu" class="hidden absolute top-full right-4 mt-2 w-56 bg-forest-800 rounded-xl shadow-2xl border border-forest-700 z-50 md:hidden overflow-hidden">
+        <nav class="flex flex-col py-2 text-sm font-medium">
+            <a href="index.html" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white"><i class="fa-solid fa-house text-yellow-400 w-4"></i> Beranda</a>
+            <a href="index.html#berita" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white"><i class="fa-solid fa-newspaper text-yellow-400 w-4"></i> Berita</a>
+            <a href="index.html#tentang" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white"><i class="fa-solid fa-bullseye text-yellow-400 w-4"></i> Proker</a>
+            <a href="index.html#kontak" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white"><i class="fa-solid fa-address-book text-yellow-400 w-4"></i> Kontak</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ========== KONTEN BERITA DETAIL ========== -->
+<main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <article class="bg-white rounded-2xl shadow-xl overflow-hidden border-l-8 border-l-orange-500">
+        <img src="image/pembekalan.JPG" alt="Gedung ASEEC Universitas Airlangga" class="w-full h-64 sm:h-80 object-cover">
+        <div class="p-6 sm:p-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <span class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full">Sosial · Terbaru</span>
+                <span class="text-gray-400 text-sm"><i class="fa-regular fa-calendar-alt mr-1"></i> 6 Juli 2026</span>
+                <span class="text-gray-400 text-sm"><i class="fa-regular fa-clock mr-1"></i> 10.00 WIB</span>
+            </div>
+
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 leading-tight">Pembekalan Kelompok Madiun: Persiapan KKN di Bantengan, Wungu</h1>
+            
+            <div class="mt-6 prose prose-green max-w-none text-gray-700 space-y-5">
+                <p class="text-lg font-medium text-forest-800">📍 <strong>Ruang Majapahit, Gedung ASEEC Universitas Airlangga Lt. 5</strong> – Seluruh mahasiswa BBK 8 yang mendapatkan penempatan di Kabupaten Madiun (Desa Bantengan, Kecamatan Wungu) mengikuti pembekalan luring perdana. Bertempat di Ruang Majapahit yang representatif, acara ini menghadirkan pemateri dari LPPM dan DPL untuk memberikan gambaran lengkap tentang lokasi KKN, persiapan teknis, serta ekspektasi program.</p>
+                
+                <p>Pembekalan dibuka oleh Koordinator Lapangan dan dilanjutkan dengan pemaparan dari <strong>Bapak Heri</strong> selaku perwakilan LPPM. Beliau menjelaskan secara detail tentang <strong>Desa Bantengan, Kecamatan Wungu, Kabupaten Madiun</strong> – mulai dari kondisi geografis, potensi desa, hingga tantangan yang mungkin dihadapi. “Desa Bantengan memiliki potensi besar di bidang pertanian dan kerajinan, namun masih membutuhkan pendampingan digital dan kesehatan,” ujar beliau.</p>
+
+                <div class="bg-forest-50 rounded-xl p-5 border-l-4 border-forest-600 my-6">
+                    <h2 class="text-xl font-bold text-forest-800 flex items-center gap-2"><i class="fa-solid fa-map-location-dot text-yellow-600"></i> Lokasi KKN & Persiapan</h2>
+                    <ul class="mt-3 space-y-2 list-disc list-inside text-gray-700">
+                        <li><strong>Desa Bantengan, Wungu, Madiun</strong> – Jarak dari kampus sekitar 3 jam perjalanan darat.</li>
+                        <li><strong>Transportasi:</strong> Mahasiswa diperbolehkan membawa sepeda motor. Universitas akan menyediakan layanan <strong>angkutan motor</strong> menggunakan truk untuk pengiriman kendaraan secara kolektif. Informasi teknis pendaftaran kendaraan akan diumumkan melalui grup resmi.</li>
+                        <li><strong>Akomodasi:</strong> Rumah-rumah warga yang telah ditunjuk sebagai posko. Setiap anggota diharapkan membawa perlengkapan pribadi (matras, alat mandi, obat pribadi).</li>
+                        <li><strong>Logistik:</strong> Konsumsi akan dikelola secara bergilir oleh setiap divisi dengan dana yang telah disiapkan.</li>
+                    </ul>
+                </div>
+
+                <!-- ========== PROGRAM KERJA TAHUN LALU (REFERENSI) ========== -->
+                <h2 class="text-xl font-bold text-forest-800 mt-6 flex items-center gap-2"><i class="fa-solid fa-book-open"></i> Program Kerja Unggulan Tahun Lalu</h2>
+                <p>Sebagai bekal dan inspirasi, tim pemateri memaparkan beberapa program kerja yang telah sukses dilaksanakan oleh kelompok KKN sebelumnya di desa yang sama. Berikut tiga program unggulan yang dapat dikembangkan kembali:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-4">
+                    <!-- JEJAK ABADI -->
+                    <div class="bg-green-50 rounded-xl p-4 border border-green-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-clock text-green-700 text-xl"></i>
+                            <h3 class="font-extrabold text-green-800 text-md">JEJAK ABADI</h3>
+                        </div>
+                        <p class="text-xs text-gray-600 font-semibold">(Jendela Jangka Waktu Sampah menjadi Tanah)</p>
+                        <p class="text-sm text-gray-700 mt-2">Papan edukasi mengenai berapa lama sampah akan terurai di dalam tanah. Sampah yang dipasang: stereofoam, kemasan tetra-pack, puntung rokok, plastik kresek, plastik bungkus makanan, botol plastik, pampers.</p>
+                    </div>
+
+                    <!-- BERSINAR -->
+                    <div class="bg-blue-50 rounded-xl p-4 border border-blue-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-leaf text-blue-700 text-xl"></i>
+                            <h3 class="font-extrabold text-blue-800 text-md">BERSINAR</h3>
+                        </div>
+                        <p class="text-xs text-gray-600 font-semibold">(Bersihkan Lahan Tercemar)</p>
+                        <p class="text-sm text-gray-700 mt-2">Zona integritas, smartversitas, kampus berdampak. Program ini fokus pada pembersihan lahan tercemar dan penguatan kesadaran lingkungan melalui pendekatan partisipatif.</p>
+                    </div>
+
+                    <!-- TUNTAS -->
+                    <div class="bg-purple-50 rounded-xl p-4 border border-purple-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i class="fa-solid fa-baby-carriage text-purple-700 text-xl"></i>
+                            <h3 class="font-extrabold text-purple-800 text-md">TUNTAS</h3>
+                        </div>
+                        <p class="text-xs text-gray-600 font-semibold">(Tumbuh Unggul Tanpa Stunting)</p>
+                        <p class="text-sm text-gray-700 mt-2">Jumlah anak stunting: 17 anak. Pertanyaan yang diajukan: riwayat penyakit orang tua hingga makanan yang dikonsumsi balita. Mayoritas bayi dan balita hanya mengonsumsi satu jenis protein (telur) dan cenderung melakukan Gerakan Tutup Mulut.</p>
+                    </div>
+                </div>
+
+                <p>Mahasiswa diharapkan dapat mengembangkan atau memodifikasi program tersebut sesuai dengan kebutuhan dan potensi terkini di Desa Bantengan.</p>
+
+                <!-- ========== AGENDA HARI INI (6 JULI 2026) ========== -->
+                <div class="bg-forest-50 rounded-xl p-5 border-l-4 border-forest-600 my-6">
+                    <h2 class="text-xl font-bold text-forest-800 flex items-center gap-2"><i class="fa-solid fa-calendar-check text-yellow-600"></i> Agenda Hari Ini, 6 Juli 2026</h2>
+                    <p class="text-gray-600 text-sm mt-1">Rangkaian kegiatan yang akan dilaksanakan hari ini:</p>
+                    <ul class="mt-4 space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-forest-600 text-white flex items-center justify-center text-xs font-bold">1</span>
+                            <div><strong class="font-semibold">Pembekalan BBK Luring</strong><br><span class="text-sm text-gray-600">Materi tentang manajemen konflik dan evaluasi program kerja. Lokasi: Ruang Majapahit, Gedung ASEEC Lt. 5, pukul <strong>10.00 – 12.30 WIB</strong>.</span></div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-forest-600 text-white flex items-center justify-center text-xs font-bold">2</span>
+                            <div><strong class="font-semibold">Meet DPL (Dosen Pembimbing Lapangan)</strong><br><span class="text-sm text-gray-600">Sesi konsultasi dan evaluasi persiapan teknis. Waktu: <strong>12.30 – 13.30 WIB</strong>.</span></div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-forest-600 text-white flex items-center justify-center text-xs font-bold">3</span>
+                            <div><strong class="font-semibold">Rapat Kelompok</strong><br><span class="text-sm text-gray-600">Rapat koordinasi divisi untuk finalisasi jadwal dan pembagian tugas lapangan. Lokasi: <strong>ASEEC Tower Lantai 1</strong>, pukul <strong>14.00 – 14.30 WIB</strong>.</span></div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-forest-600 text-white flex items-center justify-center text-xs font-bold">4</span>
+                            <div><strong class="font-semibold">Foto Studio di Kuystudio</strong><br><span class="text-sm text-gray-600">Dokumentasi resmi bersama seluruh anggota kelompok Madiun dengan tema “Semangat Pengabdian”. Lokasi: Kuystudio, pukul <strong>15.00 – 15.20 WIB</strong>.</span></div>
+                        </li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-3 italic"><i class="fa-regular fa-bell"></i> Catatan: Pendaftaran angkutan motor dapat dilakukan melalui formulir yang akan dibagikan pagi ini.</p>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg text-center text-sm text-gray-600 border">
+                    <i class="fa-regular fa-newspaper"></i> Ikuti terus perkembangan kegiatan KKN Jelajah BBK 8 melalui menu Berita di website ini.  
+                    <a href="index.html#berita" class="text-forest-600 font-medium underline ml-1">Lihat semua berita →</a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-gray-200 text-center">
+                <a href="index.html" class="inline-flex items-center gap-2 bg-forest-600 hover:bg-forest-700 text-white font-bold py-2.5 px-6 rounded-full transition shadow">
+                    <i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </article>
+</main>
+
+<footer class="bg-forest-900 text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-4 text-center text-sm text-green-300">
+        © 2026 KKN Jelajah BBK-8 Bantengan · Update: 6 Juli 2026
+    </div>
+</footer>
+
+<script>
+    (function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.addEventListener('click', function(event) {
+                if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    })();
+</script>
+</body>
+</html>

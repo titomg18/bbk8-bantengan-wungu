@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KKN Jelajah · Live Search Proker</title>
+    <title>KKN Jelajah · Live Search Proker | Berita Terbaru 6 Juli 2026</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -32,14 +32,6 @@
                             800: '#1b4f1e',
                             900: '#143618',
                         },
-                        earth: {
-                            50: '#fefce8',
-                            100: '#fef9c3',
-                            200: '#fef08a',
-                            300: '#fde047',
-                            400: '#eab308',
-                            500: '#a16207',
-                        },
                     },
                 },
             },
@@ -55,11 +47,9 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        /* Overlay gelap */
         .hero-overlay {
             background-color: rgba(20, 54, 24, 0.75);
         }
-        /* Card hover */
         .news-card {
             transition: all 0.3s ease;
         }
@@ -70,72 +60,58 @@
         .news-card.hidden-by-search {
             display: none !important;
         }
-        /* Border kategori */
         .border-left-kesehatan { border-left: 5px solid #ef4444; }
         .border-left-pendidikan { border-left: 5px solid #3b82f6; }
         .border-left-lingkungan { border-left: 5px solid #22c55e; }
         .border-left-pemberdayaan { border-left: 5px solid #a855f7; }
         .border-left-sosial { border-left: 5px solid #f97316; }
 
-        /* Tombol filter aktif */
         .filter-btn.active {
             background-color: #2e7d32;
             color: white;
             border-color: #2e7d32;
         }
 
-        /* Perbaikan responsif untuk mobile */
         @media (max-width: 768px) {
             .hero-parallax {
                 background-attachment: scroll;
             }
-            .news-card img {
-                max-width: 100%;
-                height: auto;
-            }
         }
-
-        /* Cegah overflow horizontal */
         html, body {
             overflow-x: hidden;
         }
-
-        .news-card h3 {
-            word-break: break-word;
-            overflow-wrap: break-word;
+        /* Kunci agar navbar fixed tidak menutup konten */
+        body {
+            padding-top: 64px; /* tinggi navbar 4rem = 64px */
         }
-
         @media (max-width: 640px) {
-            .filter-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.7rem;
+            body {
+                padding-top: 64px;
             }
         }
     </style>
 </head>
 <body class="bg-forest-50 font-sans text-gray-800 antialiased">
 
-<!-- ========== NAVBAR HIJAU TUA ========== -->
-<header class="bg-forest-900 text-white sticky top-0 z-40 shadow-lg relative">
+<!-- ========== NAVBAR FIXED (TETAP DI ATAS SAAT SCROLL) ========== -->
+<header class="bg-forest-900 text-white fixed top-0 left-0 w-full z-50 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" class="flex items-center gap-2.5 group">
             <img src="image/logo.png" alt="Logo Bantengan" class="w-9 h-9 rounded-lg object-cover shadow-md">
             <span class="font-extrabold text-xl text-white">KKN<span class="text-yellow-400">BBK-8</span></span>
         </a>
-        <!-- Navigasi Desktop -->
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href="#" class="hover:text-yellow-300 transition">Beranda</a>
             <a href="#berita" class="hover:text-yellow-300 transition">Berita</a>
             <a href="#tentang" class="hover:text-yellow-300 transition">Proker</a>
             <a href="#kontak" class="hover:text-yellow-300 transition">Kontak</a>
         </nav>
-        <!-- Tombol Hamburger (Mobile) -->
         <button id="menuToggle" class="md:hidden p-2 hover:bg-forest-700 rounded-lg" aria-label="Toggle menu">
             <i class="fa-solid fa-bars text-xl"></i>
         </button>
     </div>
 
-    <!-- Menu Dropdown Mobile (CARD STYLE) -->
+    <!-- Menu Dropdown Mobile -->
     <div id="mobileMenu" class="hidden absolute top-full right-4 mt-2 w-56 bg-forest-800 rounded-xl shadow-2xl border border-forest-700 z-50 md:hidden overflow-hidden">
         <nav class="flex flex-col py-2 text-sm font-medium">
             <a href="#" class="flex items-center gap-2 px-4 py-2.5 hover:bg-forest-700 transition text-white">
@@ -182,10 +158,11 @@
                     <span class="text-3xl">📮</span>
                     <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-forest-800">Cerita Terbaru</h2>
                 </div>
+                <p class="text-forest-600 text-sm">Update langsung dari lapangan · <span class="font-semibold">6 Juli 2026</span> : Pembekalan BBK 8 luring</p>
             </div>
             <div class="bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm text-xs text-forest-700 border border-forest-100">
                 <i class="fa-regular fa-newspaper mr-1"></i> 
-                <span id="visibleCountText">6</span> kegiatan ditemukan
+                <span id="visibleCountText">7</span> kegiatan ditemukan
             </div>
         </div>
 
@@ -201,7 +178,7 @@
             </div>
             <div class="relative w-full sm:w-72 mt-2 sm:mt-0" id="cari">
                 <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                <input type="text" id="searchInput" placeholder="Cari judul atau kategori... misal: 'donor' atau 'digital'" 
+                <input type="text" id="searchInput" placeholder="Cari judul atau kategori... misal: 'pembekalan' atau 'digital'" 
                        class="w-full pl-10 pr-4 py-2.5 border border-gray-200 rounded-full bg-white text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-forest-500 focus:border-transparent transition">
             </div>
         </div>
@@ -209,7 +186,20 @@
 
     <!-- Grid Berita -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="newsGrid">
-        <!-- Card 1 -->
+        <a href="pembekalan.html" class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-sosial block hover:no-underline text-inherit" data-title="Pembekalan Luring BBK 8: Sosialisasi dan Koordinasi Program Kerja" data-category="sosial">
+            <div class="relative">
+                <img src="image/pembekalan.JPG" alt="Pembekalan BBK 8 Luring" class="w-full h-48 object-cover">
+                <span class="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-md">Sosial</span>
+            </div>
+            <div class="p-5">
+                <h3 class="font-bold text-lg text-gray-900 mb-2 line-clamp-2">Pembekalan Luring BBK 8: Sosialisasi & Koordinasi Proker</h3>
+                <p class="text-gray-500 text-sm line-clamp-2 mb-3">Seluruh mahasiswa BBK 8 mengikuti pembekalan luring di Ruang Majapahit, Gedung ASEEC Lt. 5</p>
+                <div class="flex items-center text-xs text-gray-400">
+                    <i class="fa-regular fa-calendar mr-1"></i> 6 Juli 2026
+                </div>
+            </div>
+        </a>
+
         <article class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-kesehatan" data-title="Posyandu Keliling dan Pemeriksaan Ibu Hamil" data-category="kesehatan">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=350&fit=crop" alt="Posyandu" class="w-full h-48 object-cover">
@@ -224,7 +214,6 @@
             </div>
         </article>
 
-        <!-- Card 2 -->
         <article class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-pendidikan" data-title="Kelas Literasi Digital untuk Pelajar SD" data-category="pendidikan">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=350&fit=crop" alt="Literasi Digital" class="w-full h-48 object-cover">
@@ -239,7 +228,6 @@
             </div>
         </article>
 
-        <!-- Card 3 -->
         <article class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-lingkungan" data-title="Reboisasi Lahan Kritis dengan 1000 Bibit Pohon" data-category="lingkungan">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1526953208973-f6f6f3b8c9a8?w=600&h=350&fit=crop" alt="Reboisasi" class="w-full h-48 object-cover">
@@ -254,7 +242,6 @@
             </div>
         </article>
 
-        <!-- Card 4 -->
         <article class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-pemberdayaan" data-title="Workshop Branding dan Kemasan Produk Lokal" data-category="pemberdayaan">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=350&fit=crop" alt="UMKM" class="w-full h-48 object-cover">
@@ -269,7 +256,6 @@
             </div>
         </article>
 
-        <!-- Card 5 -->
         <article class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-sosial" data-title="Gotong Royong Perbaikan Jalan dan Saluran Air" data-category="sosial">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=350&fit=crop" alt="Kerja Bakti" class="w-full h-48 object-cover">
@@ -284,7 +270,6 @@
             </div>
         </article>
 
-        <!-- Card 6 -->
         <article class="news-card bg-white rounded-xl overflow-hidden shadow-md border-left-kesehatan" data-title="Aksi Donor Darah Bersama PMI Kabupaten" data-category="kesehatan">
             <div class="relative">
                 <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=350&fit=crop" alt="Donor Darah" class="w-full h-48 object-cover">
@@ -388,11 +373,11 @@
         </div>
     </div>
     <div class="text-center text-xs text-green-300 border-t border-forest-700 pt-6">
-        © 2025 KKN Jelajah · Dibuat dengan semangat pengabdian.
+        © 2026 KKN Jelajah · Dibuat dengan semangat pengabdian | Update terbaru: 6 Juli 2026
     </div>
 </footer>
 
-<!-- ========== LIVE SEARCH + FILTER + RESET SCRIPT ========== -->
+<!-- ========== SCRIPT SEARCH & FILTER ========== -->
 <script>
     (function() {
         const searchInput = document.getElementById('searchInput');
@@ -461,7 +446,7 @@
     })();
 </script>
 
-<!-- ========== MOBILE MENU DROPDOWN SCRIPT ========== -->
+<!-- ========== MOBILE MENU TOGGLE ========== -->
 <script>
     (function() {
         const menuToggle = document.getElementById('menuToggle');
